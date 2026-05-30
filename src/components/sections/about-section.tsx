@@ -27,15 +27,15 @@ const MVV = [
 ] as const;
 
 export function AboutSection() {
-  const [videoPlaying, setVideoPlaying] = useState(false);
+  const [, setVideoPlaying] = useState(false);
 
   return (
     <section className="bg-[#F0EDE8] pt-16 pb-0">
       {/* ── Top block: image + text ── */}
-      <div className="max-w-[1280px] w-full mx-auto px-2 md:px-4 lg:px-8 border border-red-500">
+      <div className="max-w-7xl w-full mx-auto px-2 md:px-4 lg:px-8 border border-red-500">
         <div className="flex flex-col md:flex-row items-start gap-10 lg:gap-16">
           {/* Left — video thumbnail */}
-          <div className="w-full md:w-[46%] flex-shrink-0">
+          <div className="w-full md:w-[46%] shrink-0">
             <div
               className="relative rounded-2xl overflow-hidden cursor-pointer group"
               style={{ aspectRatio: "4/3" }}
@@ -99,7 +99,7 @@ export function AboutSection() {
             {/* CTA */}
             <Link
               to="/quem-somos"
-              className="inline-flex items-center gap-2 bg-[#E84B2A] hover:bg-[#d4411f] text-white font-barlow font-semibold text-[12px] tracking-[0.1em] uppercase px-5 py-3 rounded transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-[#E84B2A] hover:bg-[#d4411f] text-white font-barlow font-semibold text-[12px] tracking-widest uppercase px-5 py-3 rounded transition-colors duration-200"
             >
               Ler mais sobre
               <svg
@@ -144,7 +144,7 @@ export function AboutSection() {
                         key={value}
                         className="flex items-start gap-2 font-barlow text-white/80 text-[13px] leading-snug"
                       >
-                        <span className="text-white/60 mt-0.5 flex-shrink-0">
+                        <span className="text-white/60 mt-0.5 shrink-0">
                           ➤
                         </span>
                         {value}

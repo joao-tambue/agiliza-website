@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+// import { Link } from "@tanstack/react-router";
 
 const SLIDES = [
   {
@@ -57,7 +57,7 @@ export function HeroSection() {
   const slide = SLIDES[active];
 
   return (
-    <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
+    <section className="relative h-screen min-h-150 max-h-225 overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
         style={{
@@ -69,14 +69,12 @@ export function HeroSection() {
         <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/80 to-transparent" />
       </div>
 
-      {/* Content */}
       <div
-        className={`relative z-10 flex flex-col justify-center h-full px-2 md:px-4 lg:px-8 max-w-[1280px] w-full mx-auto border border-red-500 transition-opacity duration-350 ${
+        className={`relative z-10 flex flex-col justify-center h-full px-2 md:px-4 lg:px-8 max-w-7xl w-full mx-auto border border-red-500 transition-opacity duration-350 ${
           animating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
         }`}
         style={{ paddingTop: "96px" }}
       >
-        {/* Main heading */}
         <h1 className="font-barlow-condensed font-black uppercase leading-none mb-5">
           <span className="block text-white text-[52px] md:text-[68px] lg:text-[76px] leading-[0.95]">
             {slide.titleLine1}
@@ -92,12 +90,10 @@ export function HeroSection() {
           </span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-white/90 font-barlow font-normal text-[15px] md:text-[16px] leading-relaxed max-w-[520px] mb-8">
+        <p className="text-white/90 font-barlow font-normal text-[15px] md:text-[16px] leading-relaxed max-w-130 mb-8">
           {slide.subtitle}
         </p>
 
-        {/* Tags */}
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {slide.tags.map((tag) => (
             <span
@@ -110,7 +106,7 @@ export function HeroSection() {
                 viewBox="0 0 13 10"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="flex-shrink-0"
+                className="shrink-0"
               >
                 <path
                   d="M1 5L4.5 8.5L12 1"
