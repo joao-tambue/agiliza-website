@@ -1,38 +1,6 @@
+import { SLIDES } from "#/data/home";
 import { useEffect, useState } from "react";
 // import { Link } from "@tanstack/react-router";
-
-const SLIDES = [
-  {
-    id: 0,
-    titleLine1: "A SOLUÇÃO PARA O",
-    titleHighlight: "TRABALHO",
-    titleEnd: "INFORMAL",
-    subtitle:
-      "Valorizamos o esforço de quem move a cidade, criando oportunidades e reconhecimento através da inovação.",
-    tags: ["Inovação acessível", "Reconhecimento", "Transformação"],
-    bg: "/bg/img1.png",
-  },
-  {
-    id: 1,
-    titleLine1: "CONECTAMOS",
-    titleHighlight: "TALENTOS",
-    titleEnd: "LOCAIS",
-    subtitle:
-      "Ligamos profissionais informais a oportunidades reais, com tecnologia pensada para o mercado angolano.",
-    tags: ["Conexão directa", "Mercado local", "Crescimento"],
-    bg: "/bg/img1.png",
-  },
-  {
-    id: 2,
-    titleLine1: "CRESCIMENTO COM",
-    titleHighlight: "DIGNIDADE",
-    titleEnd: "E FUTURO",
-    subtitle:
-      "Acreditamos que cada trabalhador merece reconhecimento, protecção e um caminho claro para o futuro.",
-    tags: ["Protecção social", "Futuro digital", "Angola"],
-    bg: "/bg/img1.png",
-  },
-] as const;
 
 export function HeroSection() {
   const [active, setActive] = useState(0);
@@ -70,7 +38,7 @@ export function HeroSection() {
       </div>
 
       <div
-        className={`relative z-10 flex flex-col justify-center h-full px-2 md:px-4 lg:px-8 max-w-7xl w-full mx-auto border border-red-500 transition-opacity duration-350 ${
+        className={`relative z-10 flex flex-col justify-center h-full px-2 md:px-4 lg:px-8 max-w-7xl w-full mx-auto transition-opacity duration-350 ${
           animating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
         }`}
         style={{ paddingTop: "96px" }}

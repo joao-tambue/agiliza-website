@@ -13,7 +13,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between max-w-[1280px] w-full mx-auto px-8 py-5 border border-red-500">
+    <header className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between max-w-[1280px] w-full mx-auto px-8 py-5">
       <Link to="/" className="flex items-center gap-2.5 group">
         <img src="/agiliza-logo.svg" alt="logo da agiliza" />
       </Link>

@@ -1,40 +1,14 @@
+import { MVV } from "#/data/home";
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-
-const VALORES = [
-  "Reconhecimento do esforço;",
-  "Inovação acessível;",
-  "Transparência e Ética Social;",
-  "Empoderamento tecnológico;",
-];
-
-const MVV = [
-  {
-    id: "missao",
-    label: "MISSÃO",
-    text: "Melhorar as condições de trabalho através do reconhecimento e da valorização constante do profissional informal.",
-  },
-  {
-    id: "visao",
-    label: "VISÃO",
-    text: "Ser a referência em valorização e reconhecimento para trabalhadores informais.",
-  },
-  {
-    id: "valores",
-    label: "VALORES",
-    list: VALORES,
-  },
-] as const;
 
 export function AboutSection() {
   const [, setVideoPlaying] = useState(false);
 
   return (
     <section className="bg-[#F0EDE8] pt-16 pb-0">
-      {/* ── Top block: image + text ── */}
-      <div className="max-w-7xl w-full mx-auto px-2 md:px-4 lg:px-8 border border-red-500">
+      <div className="max-w-7xl w-full mx-auto px-2 md:px-4 lg:px-8">
         <div className="flex flex-col md:flex-row items-start gap-10 lg:gap-16">
-          {/* Left — video thumbnail */}
           <div className="w-full md:w-[46%] shrink-0">
             <div
               className="relative rounded-2xl overflow-hidden cursor-pointer group"
@@ -53,10 +27,8 @@ export function AboutSection() {
                 />
               </div>
 
-              {/* Play button */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-white/30 transition-all duration-300 group-hover:scale-110">
-                  {/* Triangle play icon */}
                   <svg
                     width="20"
                     height="22"
@@ -72,23 +44,19 @@ export function AboutSection() {
             </div>
           </div>
 
-          {/* Right — text content */}
           <div className="flex-1 pt-1">
-            {/* Label pill */}
             <div className="inline-flex items-center border border-[#E84B2A]/60 rounded-full px-3 py-1 mb-5">
               <span className="text-[#E84B2A] font-barlow font-semibold text-[11px] tracking-[0.12em] uppercase">
                 Quem somos nós ?
               </span>
             </div>
 
-            {/* Quote heading */}
             <h2 className="font-barlow font-bold text-[#111111] text-[20px] md:text-[22px] leading-[1.35] mb-4">
               "Startup tecnológica fundada em 2025, com sede em Luanda – Angola,
               focada no desenvolvimento de soluções digitais inovadoras para
               empresas e para a sociedade."
             </h2>
 
-            {/* Body text */}
             <p className="font-barlow font-normal text-[#444444] text-[14px] md:text-[15px] leading-relaxed mb-7">
               Acreditamos que todo profissional merece reconhecimento justo,
               independentemente do setor em que atua. Por isso, unimos
@@ -96,7 +64,6 @@ export function AboutSection() {
               entre esforço, oportunidade e valorização.
             </p>
 
-            {/* CTA */}
             <Link
               to="/quem-somos"
               className="inline-flex items-center gap-2 bg-[#E84B2A] hover:bg-[#d4411f] text-white font-barlow font-semibold text-[12px] tracking-widest uppercase px-5 py-3 rounded transition-colors duration-200"
@@ -122,21 +89,18 @@ export function AboutSection() {
         </div>
       </div>
 
-      {/* ── Bottom block: Missão / Visão / Valores ── */}
       <div className="mt-20">
-        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16">
+        <div className="max-w-7xl mx-auto px-2 md:px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 pb-16">
             {MVV.map((item) => (
               <div
                 key={item.id}
                 className="bg-[#1E1E1E] rounded-2xl px-7 pt-7 pb-8"
               >
-                {/* Card title */}
                 <h3 className="font-barlow-condensed font-black text-white uppercase text-[44px] md:text-[48px] leading-none mb-5">
                   {item.label}
                 </h3>
 
-                {/* Content */}
                 {"list" in item ? (
                   <ul className="space-y-1.5">
                     {item.list.map((value) => (
