@@ -11,6 +11,7 @@ import { Navbar } from "../components/layout/Navbar";
 
 import '../styles.css'
 import { Footer } from "#/components/sections/cta-section";
+import { CookieBanner } from "#/components/layout/CookieBanner";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -49,6 +50,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Navbar />
         {children}
          <Footer />
+        <CookieBanner />
         <Scripts />
       </body>
     </html>

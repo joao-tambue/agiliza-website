@@ -329,11 +329,12 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Políticas e Privacidade", href: "/politicas" },
+                { label: "Políticas e Privacidade", to: "/privacidade" },
+                { label: "Termos de Uso", to: "/termos" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
-                    to={link.href}
+                    to={link.to}
                     className="font-barlow font-normal text-white/55 text-[13px] hover:text-white transition-colors duration-200 uppercase"
                   >
                     {link.label}
