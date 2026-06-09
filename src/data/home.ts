@@ -144,3 +144,41 @@ export const SERVICES = [
     image: "/services/consulting.jpg",
   },
 ];
+
+export const FAQ_ITEMS = [
+  {
+    id: "faq-1",
+    question: "O que é a Agiliza?",
+    answer:
+      "A Agiliza é uma startup tecnológica angolana fundada em 2025, focada no desenvolvimento de soluções digitais inovadoras que promovem a valorização e o reconhecimento do trabalhador informal.",
+    defaultOpen: true,
+  },
+  {
+    id: "faq-2",
+    question: "Quem pode beneficiar das soluções da Agiliza?",
+    answer:
+      "As nossas soluções destinam-se a trabalhadores informais, pequenas empresas, lavadeiras, pedreiros, canalizadores e qualquer profissional que queira aumentar a sua visibilidade e formalizar os seus serviços através de plataformas digitais.",
+    defaultOpen: false,
+  },
+  {
+    id: "faq-3",
+    question: "Como a Agiliza contribui para o setor informal?",
+    answer:
+      "Criamos pontes digitais que permitem que os profissionais do setor informal se destaquem, sejam encontrados por clientes e recebam o reconhecimento que merecem. Facilitamos o acesso a ferramentas tecnológicas antes exclusivas de grandes empresas.",
+    defaultOpen: false,
+  },
+  {
+    id: "faq-4",
+    question: "A tecnologia desenvolvida é acessível?",
+    answer:
+      "Sim. A acessibilidade é um dos nossos pilares. Desenvolvemos soluções pensadas para o contexto angolano, com interfaces simples, suporte em português e compatibilidade com dispositivos de baixo custo.",
+    defaultOpen: false,
+  },
+  {
+    id: "faq-5",
+    question: "Como posso colaborar ou estabelecer parceria?",
+    answer:
+      "Pode entrar em contacto connosco através da nossa página de contacto ou enviar um e-mail direto para a equipa. Estamos abertos a parcerias institucionais, investidores e colaboradores que partilhem da nossa visão.",
+    defaultOpen: false,
+  },
+];

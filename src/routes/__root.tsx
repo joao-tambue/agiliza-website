@@ -10,6 +10,7 @@ import { Navbar } from "../components/layout/Navbar";
 // import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import '../styles.css'
+import { Footer } from "#/components/sections/cta-section";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -47,6 +48,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className="bg-black text-white antialiased">
         <Navbar />
         {children}
+         <Footer />
         <Scripts />
       </body>
     </html>
