@@ -1,5 +1,6 @@
 import { AboutSection } from "#/components/sections/about-section";
 import { HeroSection } from "#/components/sections/hero-section";
+import { TeamSection } from "#/components/sections/team-section"
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -11,6 +12,7 @@ function HomePage() {
     <main>
       <HeroSection />
       <AboutSection />
+      <TeamSection />
     </main>
   );
 }

@@ -55,3 +55,92 @@ export const SLIDES = [
     bg: "/bg/img1.png",
   },
 ] as const;
+
+export const TEAM_MEMBERS = [
+  {
+    id: 1,
+    name: "Emília Daniel",
+    role: "CEO",
+    image: "/team/me.png",
+    rotate: -8,
+  },
+  {
+    id: 2,
+    name: "João Tambue",
+    role: "Tech Lead",
+    image: "/team/joao.png",
+    rotate: -3,
+  },
+  {
+    id: 3,
+    name: "Catarina Monteiro",
+    role: "CEO",
+    image: "/team/catarina.png",
+    rotate: 0,
+  },
+  {
+    id: 4,
+    name: "João Jorge",
+    role: "Chief Marketing",
+    image: "/team/jorge.png",
+    rotate: 3,
+  },
+  {
+    id: 5,
+    name: "Elizandro Luís",
+    role: "CMO",
+    image: "/team/elizandro.png",
+    rotate: 8,
+  },
+];
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    name: "Tio Martins",
+    role: "Chefe da associação das mamãs da OMA",
+    image: "/team/me.png",
+    text: `"Uma equipa dedicada a dar os melhores serviços no ramo da tecnologia, soluções realmente impactantes e úteis para a comunidade"`,
+  },
+  {
+    id: 2,
+    name: "Ana Paulo",
+    role: "Empreendedora",
+    image: "/team/ana.png",
+    text: `"A Agiliza ajudou-nos a digitalizar processos e aumentar a produtividade."`,
+  },
+];
+
+export const SERVICES = [
+  {
+    id: 1,
+    title: "DESENVOLVIMENTO WEB",
+    description:
+      "Criamos aplicações modernas, rápidas e escaláveis.",
+    image: "/services/web.jpg",
+  },
+
+  {
+    id: 2,
+    title: "DESENVOLVIMENTO DE SISTEMAS",
+    description:
+      "Sistemas empresariais personalizados.",
+    image: "/services/system.jpg",
+  },
+
+  {
+    id: 3,
+    title: "SOLUÇÕES TECNOLÓGICAS PERSONALIZADAS",
+    description:
+      "Automação e transformação digital.",
+    image: "/services/solution.jpg",
+  },
+
+  {
+    id: 4,
+    title: "CONSULTORIA EM TECNOLOGIA",
+    description:
+      "Apoio estratégico para empresas.",
+    image: "/services/consulting.jpg",
+  },
+];
