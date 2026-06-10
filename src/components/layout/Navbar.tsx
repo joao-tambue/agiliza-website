@@ -1,13 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
-const NAV_LINKS = [
+type NavLink = {
+  label: string;
+  to: "/" | "/quem-somos" | "/equipe" | "/contacto";
+  hash?: "servicos" | "faq";
+};
+
+const NAV_LINKS: NavLink[] = [
   { label: "Quem Somos", to: "/quem-somos" },
-  { label: "Nossos Serviços", to: "/servicos" },
+  { label: "Nossos Serviços", to: "/", hash: "servicos" },
   { label: "Equipe", to: "/equipe" },
-  { label: "FAQ", to: "/faq" },
+  { label: "FAQ", to: "/", hash: "faq" },
   { label: "Contacto", to: "/contacto" },
-] as const;
+];
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,8 +27,9 @@ export function Navbar() {
       <nav className="hidden md:flex items-center gap-8">
         {NAV_LINKS.map((link) => (
           <Link
-            key={link.to}
+            key={link.label}
             to={link.to}
+            hash={link.hash}
             className="text-white/90 hover:text-white text-[14px] font-barlow font-medium tracking-wide transition-colors duration-200"
             activeProps={{ className: "text-white" }}
           >
@@ -63,8 +70,9 @@ export function Navbar() {
           <nav className="flex flex-col px-8 py-6 gap-5">
             {NAV_LINKS.map((link) => (
               <Link
-                key={link.to}
+                key={link.label}
                 to={link.to}
+                hash={link.hash}
                 onClick={() => setMenuOpen(false)}
                 className="text-white/80 hover:text-white text-[15px] font-barlow font-medium tracking-wide transition-colors"
               >

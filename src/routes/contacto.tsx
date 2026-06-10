@@ -1,0 +1,301 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { Send, CheckCircle } from "lucide-react";
+
+export const Route = createFileRoute("/contacto")({
+  component: ContactoPage,
+});
+
+const ASSUNTOS = [
+  "Parceria",
+  "Serviços",
+  "Suporte",
+  "Investimento",
+  "Outro",
+] as const;
+
+function ContactoPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    assunto: "",
+    mensagem: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <main>
+        <section className="bg-[#111] pt-32 pb-16">
+          <div className="max-w-7xl mx-auto px-4 text-center">
+            <div className="inline-flex items-center border border-[#E84B2A]/60 rounded-full px-3 py-1 mb-6">
+              <span className="text-[#E84B2A] font-barlow font-semibold text-[11px] tracking-[0.12em] uppercase">
+                Contacto
+              </span>
+            </div>
+            <h1 className="font-barlow-condensed font-black text-white text-[48px] md:text-[80px] leading-[0.9] uppercase">
+              Mensagem
+              <br />
+              Enviada
+            </h1>
+          </div>
+        </section>
+
+        <section className="bg-[#F0EDE8] py-24">
+          <div className="max-w-2xl mx-auto px-4 text-center">
+            <div className="flex justify-center mb-6">
+              <CheckCircle size={64} className="text-[#E84B2A]" />
+            </div>
+            <h2 className="font-barlow-condensed font-black text-[#111] text-[32px] uppercase leading-tight mb-4">
+              Obrigado pelo contacto!
+            </h2>
+            <p className="font-barlow text-[#444] text-[14px] leading-relaxed max-w-md mx-auto mb-8">
+              Recebemos a sua mensagem e entraremos em contacto consigo o mais
+              breve possível.
+            </p>
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 bg-[#E84B2A] hover:bg-[#d4411f] text-white font-barlow font-semibold text-[12px] tracking-widest uppercase px-6 py-3.5 rounded transition-colors duration-200"
+            >
+              Voltar ao Início
+            </Link>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
+  return (
+    <main>
+      <section className="bg-[#111] pt-32 pb-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="inline-flex items-center border border-[#E84B2A]/60 rounded-full px-3 py-1 mb-6">
+            <span className="text-[#E84B2A] font-barlow font-semibold text-[11px] tracking-[0.12em] uppercase">
+              Contacto
+            </span>
+          </div>
+          <h1 className="font-barlow-condensed font-black text-white text-[48px] md:text-[80px] leading-[0.9] uppercase">
+            Fale
+            <br />
+            Connosco
+          </h1>
+        </div>
+      </section>
+
+      <section className="bg-[#F0EDE8] py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+            <div className="md:col-span-2">
+              <h2 className="font-barlow-condensed font-black text-[#111] text-[32px] md:text-[44px] uppercase leading-tight mb-6">
+                Entre em
+                <br />
+                Contacto
+              </h2>
+              <p className="font-barlow text-[#444] text-[14px] leading-relaxed mb-8">
+                Tem alguma pergunta, ideia ou quer saber mais sobre os nossos
+                serviços? Preencha o formulário ao lado e responderemos em
+                breve.
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-[#E84B2A]/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#E84B2A"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-barlow font-bold text-[#111] text-[13px]">
+                      Email
+                    </p>
+                    <a
+                      href="mailto:contacto@agiliza.ao"
+                      className="font-barlow text-[#444] text-[13px] hover:text-[#E84B2A] transition-colors"
+                    >
+                      contacto@agiliza.ao
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-[#E84B2A]/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#E84B2A"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-barlow font-bold text-[#111] text-[13px]">
+                      Localização
+                    </p>
+                    <p className="font-barlow text-[#444] text-[13px]">
+                      Luanda, Angola
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-3">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-white rounded-2xl border border-[#E0DDD8] shadow-lg p-8 space-y-5"
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label
+                      htmlFor="nome"
+                      className="block font-barlow font-semibold text-[#111] text-[12px] uppercase tracking-wide mb-1.5"
+                    >
+                      Nome completo *
+                    </label>
+                    <input
+                      id="nome"
+                      name="nome"
+                      type="text"
+                      required
+                      value={form.nome}
+                      onChange={handleChange}
+                      placeholder="O seu nome"
+                      className="w-full font-barlow text-[13px] text-[#111] placeholder-[#AAAAAA] bg-[#F7F5F2] border border-[#E0DDD8] rounded-lg px-4 py-3 focus:outline-none focus:border-[#E84B2A] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block font-barlow font-semibold text-[#111] text-[12px] uppercase tracking-wide mb-1.5"
+                    >
+                      Email *
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="seu@email.com"
+                      className="w-full font-barlow text-[13px] text-[#111] placeholder-[#AAAAAA] bg-[#F7F5F2] border border-[#E0DDD8] rounded-lg px-4 py-3 focus:outline-none focus:border-[#E84B2A] transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label
+                      htmlFor="telefone"
+                      className="block font-barlow font-semibold text-[#111] text-[12px] uppercase tracking-wide mb-1.5"
+                    >
+                      Telefone
+                    </label>
+                    <input
+                      id="telefone"
+                      name="telefone"
+                      type="tel"
+                      value={form.telefone}
+                      onChange={handleChange}
+                      placeholder="+244 XXX XXX XXX"
+                      className="w-full font-barlow text-[13px] text-[#111] placeholder-[#AAAAAA] bg-[#F7F5F2] border border-[#E0DDD8] rounded-lg px-4 py-3 focus:outline-none focus:border-[#E84B2A] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="assunto"
+                      className="block font-barlow font-semibold text-[#111] text-[12px] uppercase tracking-wide mb-1.5"
+                    >
+                      Assunto *
+                    </label>
+                    <select
+                      id="assunto"
+                      name="assunto"
+                      required
+                      value={form.assunto}
+                      onChange={handleChange}
+                      className="w-full font-barlow text-[13px] text-[#111] bg-[#F7F5F2] border border-[#E0DDD8] rounded-lg px-4 py-3 focus:outline-none focus:border-[#E84B2A] transition-colors appearance-none"
+                      style={{
+                        backgroundImage:
+                          "url(\"data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23999' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "right 16px center",
+                      }}
+                    >
+                      <option value="" disabled>
+                        Selecione um assunto
+                      </option>
+                      {ASSUNTOS.map((a) => (
+                        <option key={a} value={a}>
+                          {a}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="mensagem"
+                    className="block font-barlow font-semibold text-[#111] text-[12px] uppercase tracking-wide mb-1.5"
+                  >
+                    Mensagem *
+                  </label>
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    required
+                    rows={5}
+                    value={form.mensagem}
+                    onChange={handleChange}
+                    placeholder="Escreva a sua mensagem..."
+                    className="w-full font-barlow text-[13px] text-[#111] placeholder-[#AAAAAA] bg-[#F7F5F2] border border-[#E0DDD8] rounded-lg px-4 py-3 focus:outline-none focus:border-[#E84B2A] transition-colors resize-y"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#E84B2A] hover:bg-[#d4411f] text-white font-barlow font-semibold text-[12px] tracking-widest uppercase px-6 py-3.5 rounded-lg transition-colors duration-200"
+                >
+                  <Send size={14} />
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

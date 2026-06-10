@@ -6,7 +6,7 @@ const SERVICE_ICONS = [Globe, Server, Cpu, BarChart3] as const;
 
 export function ServicesSection() {
   return (
-    <section className="bg-[#111] py-24 overflow-hidden">
+    <section id="servicos" className="bg-[#111] py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-4">
           <div className="inline-flex items-center border border-[#E84B2A]/60 rounded-full px-3 py-1">
