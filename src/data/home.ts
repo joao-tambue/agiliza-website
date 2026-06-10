@@ -59,16 +59,16 @@ export const SLIDES = [
 export const TEAM_MEMBERS = [
   {
     id: 1,
-    name: "Emília Daniel",
-    role: "CEO",
-    image: "/team/me.png",
+    name: "Gelson Ganga",
+    role: "Dev. Frontend",
+    image: "/team/gelson.png",
     rotate: -8,
   },
   {
     id: 2,
     name: "João Tambue",
     role: "Tech Lead",
-    image: "/team/joao.png",
+    image: "/team/me.png",
     rotate: -3,
   },
   {
@@ -82,7 +82,7 @@ export const TEAM_MEMBERS = [
     id: 4,
     name: "João Jorge",
     role: "Chief Marketing",
-    image: "/team/jorge.png",
+    image: "/team/joao_jorge.jpeg",
     rotate: 3,
   },
   {
