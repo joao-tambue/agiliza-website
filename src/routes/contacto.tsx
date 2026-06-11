@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Send } from "lucide-react";
 
 const WHATSAPP_NUMBER = "244941019521";
