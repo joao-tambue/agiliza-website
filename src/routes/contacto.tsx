@@ -1,7 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Send, CheckCircle } from "lucide-react";
+import { Send } from "lucide-react";
+
+const WHATSAPP_NUMBER = "244941019521";
 
 export const Route = createFileRoute("/contacto")({
   component: ContactoPage,
@@ -16,7 +18,6 @@ const ASSUNTOS = [
 ] as const;
 
 function ContactoPage() {
-  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     nome: "",
     email: "",
@@ -35,50 +36,16 @@ function ContactoPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    const texto =
+      `Olá! 👋\n\n` +
+      `*Nome:* ${form.nome}\n` +
+      `*Email:* ${form.email}\n` +
+      `*Telefone:* ${form.telefone || "—"}\n` +
+      `*Assunto:* ${form.assunto}\n` +
+      `*Mensagem:* ${form.mensagem}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
+    window.open(url, "_blank");
   };
-
-  if (submitted) {
-    return (
-      <main>
-        <section className="bg-[#111] pt-32 pb-16">
-          <div className="max-w-7xl mx-auto px-4 text-center">
-            <div className="inline-flex items-center border border-[#E84B2A]/60 rounded-full px-3 py-1 mb-6">
-              <span className="text-[#E84B2A] font-barlow font-semibold text-[11px] tracking-[0.12em] uppercase">
-                Contacto
-              </span>
-            </div>
-            <h1 className="font-barlow-condensed font-black text-white text-[48px] md:text-[80px] leading-[0.9] uppercase">
-              Mensagem
-              <br />
-              Enviada
-            </h1>
-          </div>
-        </section>
-
-        <section className="bg-[#F0EDE8] py-24">
-          <div className="max-w-2xl mx-auto px-4 text-center">
-            <div className="flex justify-center mb-6">
-              <CheckCircle size={64} className="text-[#E84B2A]" />
-            </div>
-            <h2 className="font-barlow-condensed font-black text-[#111] text-[32px] uppercase leading-tight mb-4">
-              Obrigado pelo contacto!
-            </h2>
-            <p className="font-barlow text-[#444] text-[14px] leading-relaxed max-w-md mx-auto mb-8">
-              Recebemos a sua mensagem e entraremos em contacto consigo o mais
-              breve possível.
-            </p>
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 bg-[#E84B2A] hover:bg-[#d4411f] text-white font-barlow font-semibold text-[12px] tracking-widest uppercase px-6 py-3.5 rounded transition-colors duration-200"
-            >
-              Voltar ao Início
-            </Link>
-          </div>
-        </section>
-      </main>
-    );
-  }
 
   return (
     <main>
@@ -167,6 +134,32 @@ function ContactoPage() {
                     </p>
                   </div>
                 </div>
+
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-[#25D366]/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#25D366]/30 transition-colors">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="#25D366"
+                    >
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-barlow font-bold text-[#111] text-[13px]">
+                      WhatsApp
+                    </p>
+                    <p className="font-barlow text-[#444] text-[13px] group-hover:text-[#25D366] transition-colors">
+                      +244 941 019 521
+                    </p>
+                  </div>
+                </a>
               </div>
             </div>
 
